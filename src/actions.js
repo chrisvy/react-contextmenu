@@ -12,7 +12,7 @@ export function dispatchGlobalEvent(eventName, opts, target = window) {
     let event;
 
     if (typeof window.CustomEvent === 'function') {
-        event = new window.CustomEvent(eventName, { detail: opts });
+        event = new window.CustomEvent(eventName, { detail: opts });//自定义事件
     } else {
         event = document.createEvent('CustomEvent');
         event.initCustomEvent(eventName, false, true, opts);
